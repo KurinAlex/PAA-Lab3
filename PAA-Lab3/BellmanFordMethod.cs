@@ -1,6 +1,6 @@
 ﻿namespace PAA_Lab3
 {
-    public class BellmanFordMethod : IMethod
+    public class BellmanFordMethod : IPathFindingMethod
     {
         public string Name => "Bellman-Ford";
 

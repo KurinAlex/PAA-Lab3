@@ -2,11 +2,11 @@
 
 namespace PAA_Lab3
 {
-    public class DijkstraMethod : IMethod
+    public class DijkstraMethod : IPathFindingMethod
     {
         public string Name => "Dijkstra";
 
-        public double[] GetShortestPaths(Graph graph, int source)
+        private double[] GetShortestPaths(Graph graph, int source)
         {
             var d = Enumerable
                 .Repeat(double.PositiveInfinity, graph.VerticesCount)

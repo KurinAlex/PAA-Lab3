@@ -11,7 +11,7 @@ namespace PAA_Lab3
         static readonly string adjacencyMatrixFilePath = Path.Combine(InputFolderPath, AdjacencyMatrixFileName);
         static readonly string weightsMatrixFilePath = Path.Combine(InputFolderPath, WeightsMatrixFileName);
 
-        static readonly IMethod[] methods = {
+        static readonly IPathFindingMethod[] methods = {
             new BellmanFordMethod(),
             new DijkstraMethod(),
             new FloydWarshallMethod(),
@@ -33,8 +33,10 @@ namespace PAA_Lab3
                 double[][] weightsMatrix = ArrayHelper.ReadFromFile<double>(weightsMatrixFilePath);
                 Graph graph = new(adjacencyMatrix, weightsMatrix);
 
-                foreach (IMethod method in methods)
+
+                foreach (IPathFindingMethod method in methods)
                 {
+                    WriteDivider();
                     Console.WriteLine($"{method.Name} method:");
                     WriteDivider();
 
@@ -44,17 +46,16 @@ namespace PAA_Lab3
 
                     Console.WriteLine($"Result:");
                     ArrayHelper.WriteArray(result);
+                    WriteDivider();
 
                     Console.WriteLine("Computation time:");
                     Console.WriteLine($"{stopwatch.Elapsed.TotalMilliseconds} ms");
                     WriteDivider();
 
                     results.Add(result);
-
-                    WriteDivider();
-                    WriteDivider();
                 }
 
+                WriteDivider();
                 Console.WriteLine("All results are equal:");
                 Console.WriteLine(ArrayHelper.AreArraysEqual(results));
                 WriteDivider();

@@ -1,13 +1,8 @@
 ﻿namespace PAA_Lab3
 {
-    public class FloydWarshallMethod : IMethod
+    public class FloydWarshallMethod : IPathFindingMethod
     {
         public string Name => "Floyd-Warshall";
-
-        public double[] GetShortestPaths(Graph graph, int source)
-        {
-            return GetShortestPaths(graph)[source];
-        }
 
         public double[][] GetShortestPaths(Graph graph)
         {

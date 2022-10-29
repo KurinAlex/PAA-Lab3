@@ -1,13 +1,8 @@
 ﻿namespace PAA_Lab3
 {
-    public class JohnsonMethod : IMethod
+    public class JohnsonMethod : IPathFindingMethod
     {
         public string Name => "Johnson";
-
-        public double[] GetShortestPaths(Graph graph, int source)
-        {
-            return GetShortestPaths(graph)[source];
-        }
 
         public double[][] GetShortestPaths(Graph graph)
         {

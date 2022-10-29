@@ -1,6 +1,6 @@
 ﻿namespace PAA_Lab3
 {
-    public interface IMethod
+    public interface IPathFindingMethod
     {
         string Name { get; }
         double[][] GetShortestPaths(Graph graph);
