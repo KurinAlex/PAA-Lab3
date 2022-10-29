@@ -6,11 +6,6 @@ namespace PAA_Lab3
     {
         public string Name => "Dijkstra";
 
-        public double GetShortestPath(Graph graph, int source, int destination)
-        {
-            return GetShortestPaths(graph, source)[destination];
-        }
-
         public double[] GetShortestPaths(Graph graph, int source)
         {
             var d = Enumerable

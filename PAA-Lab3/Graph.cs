@@ -34,11 +34,10 @@
         public int AddVertice()
         {
             int v = _verticesCount++;
-            var newEdges = Enumerable.Range(0, _verticesCount)
-                .Select(u => new Edge(v, u, 0.0));
-            foreach (Edge e in newEdges)
+            for (int i = 0; i < _verticesCount - 1; i++)
             {
-                _edges.Add(e);
+                Edge newEdge = new(v, i, 0.0);
+                _edges.Add(newEdge);
             }
             return v;
         }

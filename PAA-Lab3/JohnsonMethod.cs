@@ -4,11 +4,6 @@
     {
         public string Name => "Johnson";
 
-        public double GetShortestPath(Graph graph, int source, int destination)
-        {
-            return GetShortestPaths(graph)[source][destination];
-        }
-
         public double[] GetShortestPaths(Graph graph, int source)
         {
             return GetShortestPaths(graph)[source];
